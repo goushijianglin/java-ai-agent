@@ -9,7 +9,7 @@ import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-/** API のエラーを {"message": "..."} 形式で返す */
+
 @RestControllerAdvice
 public class ApiExceptionHandler {
 
