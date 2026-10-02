@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4fce3"/>
+      <stop offset="1" stop-color="#d8f5a2"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <ellipse cx="200" cy="262" rx="140" ry="16" fill="url(#shadow)"/>
+
+  <g transform="translate(200 170) rotate(-55) scale(1.0)"><path d="M0 0 q40 -50 0 -110 q-40 60 0 110 z" fill="#2b8a3e"/><path d="M0 0 v-100" stroke="#8ce99a" stroke-width="3"/><path d="M-14 -40 l10 4 M-18 -70 l12 4 M14 -50 l-10 4 M12 -80 l-10 4" stroke="#d8f5a2" stroke-width="5" stroke-linecap="round"/></g><g transform="translate(200 170) rotate(-25) scale(1.15)"><path d="M0 0 q40 -50 0 -110 q-40 60 0 110 z" fill="#2b8a3e"/><path d="M0 0 v-100" stroke="#8ce99a" stroke-width="3"/><path d="M-14 -40 l10 4 M-18 -70 l12 4 M14 -50 l-10 4 M12 -80 l-10 4" stroke="#d8f5a2" stroke-width="5" stroke-linecap="round"/></g><g transform="translate(200 170) rotate(0) scale(1.25)"><path d="M0 0 q40 -50 0 -110 q-40 60 0 110 z" fill="#2b8a3e"/><path d="M0 0 v-100" stroke="#8ce99a" stroke-width="3"/><path d="M-14 -40 l10 4 M-18 -70 l12 4 M14 -50 l-10 4 M12 -80 l-10 4" stroke="#d8f5a2" stroke-width="5" stroke-linecap="round"/></g><g transform="translate(200 170) rotate(28) scale(1.1)"><path d="M0 0 q40 -50 0 -110 q-40 60 0 110 z" fill="#2b8a3e"/><path d="M0 0 v-100" stroke="#8ce99a" stroke-width="3"/><path d="M-14 -40 l10 4 M-18 -70 l12 4 M14 -50 l-10 4 M12 -80 l-10 4" stroke="#d8f5a2" stroke-width="5" stroke-linecap="round"/></g><g transform="translate(200 170) rotate(58) scale(0.95)"><path d="M0 0 q40 -50 0 -110 q-40 60 0 110 z" fill="#2b8a3e"/><path d="M0 0 v-100" stroke="#8ce99a" stroke-width="3"/><path d="M-14 -40 l10 4 M-18 -70 l12 4 M14 -50 l-10 4 M12 -80 l-10 4" stroke="#d8f5a2" stroke-width="5" stroke-linecap="round"/></g>
+  <path d="M140 170 h120 l-14 90 h-92 z" fill="#f8f9fa" stroke="#ced4da" stroke-width="3"/>
+  <rect x="134" y="162" width="132" height="16" rx="4" fill="#e9ecef" stroke="#ced4da" stroke-width="3"/>
+
+</svg>

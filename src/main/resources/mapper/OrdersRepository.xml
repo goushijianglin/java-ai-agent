@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.ec.repository.OrdersRepository">
+
+  <insert id="insertOrder" parameterType="Order" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    INSERT INTO orders (user_id) VALUES (#{userId})
+  </insert>
+
+  <insert id="insertOrderItem" parameterType="OrderItem" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    INSERT INTO order_items (order_id, product_id, quantity, unit_price)
+    VALUES (#{orderId}, #{productId}, #{quantity}, #{unitPrice})
+  </insert>
+
+  <select id="findDetail" resultType="OrderDetail">
+    SELECT o.id         AS order_id,
+           o.user_id,
+           o.created_at,
+           oi.product_id,
+           p.name       AS product_name,
+           oi.quantity,
+           oi.unit_price
+      FROM orders o
+      JOIN order_items oi ON oi.order_id = o.id
+      JOIN products p     ON p.id = oi.product_id
+     WHERE o.id = #{orderId}
+     ORDER BY oi.id
+     LIMIT 1
+  </select>
+</mapper>

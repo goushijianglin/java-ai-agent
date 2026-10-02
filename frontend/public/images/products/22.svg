@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff9db"/>
+      <stop offset="1" stop-color="#ffe066"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <ellipse cx="200" cy="262" rx="140" ry="16" fill="url(#shadow)"/>
+
+  <path d="M150 150 q0 -60 -50 -60 q-50 0 -60 60 q10 60 60 60 q50 0 50 -60 z" fill="#d9480f"/>
+  <path d="M200 150 q0 -48 -36 -48 q-30 0 -36 48 q6 48 36 48 q36 0 36 -48 z" fill="#d9480f"/>
+  <path d="M150 150 q0 -50 -46 -50 q-44 0 -54 50 q10 50 54 50 q46 0 46 -50 z" fill="#e8590c"/>
+  <path d="M196 150 q0 -40 -32 -40 q-26 0 -30 40 q4 40 30 40 q32 0 32 -40 z" fill="#e8590c"/>
+  <circle cx="160" cy="150" r="18" fill="#212529"/>
+  <rect x="198" y="134" width="150" height="32" fill="#5c3d2e"/>
+  <path d="M250 136 v28" stroke="#ced4da" stroke-width="2"/><path d="M264 136 v28" stroke="#ced4da" stroke-width="2"/><path d="M278 136 v28" stroke="#ced4da" stroke-width="2"/><path d="M292 136 v28" stroke="#ced4da" stroke-width="2"/><path d="M306 136 v28" stroke="#ced4da" stroke-width="2"/><path d="M320 136 v28" stroke="#ced4da" stroke-width="2"/><path d="M334 136 v28" stroke="#ced4da" stroke-width="2"/><path d="M348 136 v28" stroke="#ced4da" stroke-width="2"/>
+  <rect x="346" y="126" width="34" height="48" rx="6" fill="#5c3d2e"/>
+  <rect x="80" y="140" width="10" height="22" fill="#343a40"/>
+  <path d="M110 141 H370" stroke="#dee2e6" stroke-width="1"/><path d="M110 145 H370" stroke="#dee2e6" stroke-width="1"/><path d="M110 149 H370" stroke="#dee2e6" stroke-width="1"/><path d="M110 153 H370" stroke="#dee2e6" stroke-width="1"/><path d="M110 157 H370" stroke="#dee2e6" stroke-width="1"/><path d="M110 161 H370" stroke="#dee2e6" stroke-width="1"/>
+
+</svg>

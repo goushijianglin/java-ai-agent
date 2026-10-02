@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff0f6"/>
+      <stop offset="1" stop-color="#fcc2d7"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <ellipse cx="200" cy="262" rx="140" ry="16" fill="url(#shadow)"/>
+
+  <path d="M60 120 q-20 -10 -26 30" fill="none" stroke="#212529" stroke-width="8" stroke-linecap="round"/>
+  <path d="M340 120 q20 -10 26 30" fill="none" stroke="#212529" stroke-width="8" stroke-linecap="round"/>
+  <path d="M60 118 h110 q4 70 -52 70 q-60 0 -58 -70 z" fill="#212529"/>
+  <path d="M230 118 h110 q2 70 -58 70 q-56 0 -52 -70 z" fill="#212529"/>
+  <path d="M70 126 h92 q0 54 -44 54 q-50 0 -48 -54 z" fill="#364fc7"/>
+  <path d="M238 126 h92 q2 54 -48 54 q-44 0 -44 -54 z" fill="#364fc7"/>
+  <path d="M80 134 l30 0 l-26 30 z M248 134 l30 0 l-26 30 z" fill="#fff" opacity="0.35"/>
+  <path d="M170 124 q30 -16 60 0" fill="none" stroke="#212529" stroke-width="8"/>
+
+</svg>

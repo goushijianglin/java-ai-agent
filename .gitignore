@@ -1,0 +1,3 @@
+target/
+.tomcat-base/
+frontend/node_modules/

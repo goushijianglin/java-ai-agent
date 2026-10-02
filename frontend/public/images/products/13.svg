@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9ecef"/>
+      <stop offset="1" stop-color="#adb5bd"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <ellipse cx="200" cy="262" rx="140" ry="16" fill="url(#shadow)"/>
+
+  <defs>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4c6ef5"/><stop offset="1" stop-color="#be4bdb"/>
+    </linearGradient>
+  </defs>
+  <rect x="140" y="24" width="120" height="238" rx="22" fill="#212529"/>
+  <rect x="148" y="32" width="104" height="222" rx="16" fill="url(#screen)"/>
+  <rect x="182" y="38" width="36" height="10" rx="5" fill="#212529"/>
+  <g fill="#fff" opacity="0.85">
+    <rect x="160" y="80" width="22" height="22" rx="6"/><rect x="189" y="80" width="22" height="22" rx="6"/><rect x="218" y="80" width="22" height="22" rx="6"/>
+    <rect x="160" y="112" width="22" height="22" rx="6"/><rect x="189" y="112" width="22" height="22" rx="6"/><rect x="218" y="112" width="22" height="22" rx="6"/>
+  </g>
+  <text x="200" y="196" font-family="sans-serif" font-size="30" fill="#fff" text-anchor="middle">12:34</text>
+  <rect x="178" y="240" width="44" height="4" rx="2" fill="#fff" opacity="0.8"/>
+
+</svg>

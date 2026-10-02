@@ -1,0 +1,119 @@
+:root {
+  --bg: #f5f6f8;
+  --fg: #1f2933;
+  --muted: #6b7785;
+  --line: #e1e5ea;
+  --card: #fff;
+  --primary: #e8590c;
+  --primary-dark: #c2410c;
+  --error-bg: #fdecea;
+  --error-fg: #a61b1b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+a { color: var(--primary-dark); }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #1f2933;
+  color: #fff;
+}
+.brand { color: #fff; font-weight: 700; font-size: 20px; text-decoration: none; }
+.header-user { display: flex; align-items: center; gap: 12px; }
+.user-name { font-weight: 600; }
+.header .btn-link { color: #fff; }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 24px 16px 48px; }
+
+h1 { font-size: 24px; margin: 0 0 16px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; font-size: 13px; color: var(--muted); }
+.field input {
+  font-size: 15px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--fg);
+}
+.field input:focus { outline: 2px solid var(--primary); border-color: transparent; }
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--fg);
+  font-size: 15px;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { background: #f0f2f5; }
+.btn-primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn:disabled { background: #f5f5f5; border-color: var(--line); color: #aaa; cursor: not-allowed; }
+.btn-link { background: none; border: none; text-decoration: underline; padding: 4px; }
+.btn-link:hover { background: none; }
+.btn-small { padding: 4px 12px; font-size: 13px; }
+.btn-block { width: 100%; }
+
+.alert { padding: 10px 14px; border-radius: 6px; margin-bottom: 16px; }
+.alert-error { background: var(--error-bg); color: var(--error-fg); border: 1px solid #f5c2c0; }
+
+.muted { color: var(--muted); font-size: 13px; }
+.hint { color: var(--muted); font-size: 13px; text-align: center; margin: 12px 0 0; }
+
+.login-card { max-width: 380px; margin: 48px auto; }
+
+.search { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.search .field { margin-bottom: 0; width: 140px; }
+.search .field.grow { flex: 1; min-width: 200px; }
+.search-actions { display: flex; gap: 8px; }
+
+.table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.table th, .table td { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+.table th { background: #fafbfc; font-size: 13px; color: var(--muted); }
+.table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.thumb { width: 56px; height: 42px; object-fit: cover; border-radius: 4px; border: 1px solid var(--line); display: block; }
+.soldout { color: var(--error-fg); font-weight: 600; }
+.empty { text-align: center; color: var(--muted); }
+
+.pager { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 20px; }
+.pager-info { color: var(--muted); }
+
+.detail { display: flex; gap: 32px; flex-wrap: wrap; }
+.detail-image { width: 400px; max-width: 100%; aspect-ratio: 4 / 3; border-radius: 8px; border: 1px solid var(--line); }
+.detail-body { flex: 1; min-width: 260px; }
+.price { font-size: 26px; font-weight: 700; color: var(--primary-dark); margin: 0 0 12px; }
+.price small { font-size: 13px; color: var(--muted); font-weight: 400; margin-left: 4px; }
+.description { white-space: pre-wrap; }
+.purchase { display: flex; gap: 12px; align-items: flex-end; }
+.purchase .field { margin-bottom: 0; width: 120px; }
+
+.complete { max-width: 520px; margin: 24px auto; }
+.summary { display: grid; grid-template-columns: 120px 1fr; gap: 8px 16px; margin: 0 0 24px; }
+.summary dt { color: var(--muted); }
+.summary dd { margin: 0; font-weight: 600; }
+.summary .total { font-size: 20px; color: var(--primary-dark); }

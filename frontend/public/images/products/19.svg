@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e7f5ff"/>
+      <stop offset="1" stop-color="#d0ebff"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <ellipse cx="200" cy="262" rx="140" ry="16" fill="url(#shadow)"/>
+
+  <path d="M150 50 q50 30 100 0 l80 40 l-30 60 l-34 -18 v128 h-132 v-128 l-34 18 l-30 -60 z" fill="#fff" stroke="#ced4da" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M170 52 q30 26 60 0" fill="none" stroke="#ced4da" stroke-width="4"/>
+  <path d="M136 132 v128 M264 132 v128" stroke="#e9ecef" stroke-width="2"/>
+  <text x="200" y="170" font-family="sans-serif" font-weight="700" font-size="22" fill="#1971c2" text-anchor="middle">ORGANIC</text>
+
+</svg>
