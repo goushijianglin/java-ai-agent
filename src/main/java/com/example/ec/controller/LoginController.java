@@ -28,7 +28,7 @@ public class LoginController {
         this.usersRepository = usersRepository;
     }
 
-    /** ログイン。成功時はセッションに loginUser を保存し、そのユーザ情報を返す */
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest req, HttpServletRequest request) {
         String username = req.username() == null ? "" : req.username().trim();
