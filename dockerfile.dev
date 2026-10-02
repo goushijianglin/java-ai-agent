@@ -1,0 +1,56 @@
+FROM ubuntu:24.04
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+    curl git unzip zip bash ca-certificates gnupg \
+    build-essential maven \
+    && rm -rf /var/lib/apt/lists/*
+
+# OpenJDK 21 (Temurin)  [改动：25 -> 21]
+RUN curl -fsSL https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --dearmor -o /usr/share/keyrings/adoptium.gpg \
+ && echo "deb [signed-by=/usr/share/keyrings/adoptium.gpg] https://packages.adoptium.net/artifactory/deb noble main" \
+    > /etc/apt/sources.list.d/adoptium.list \
+ && apt-get update \
+ && apt-get install -y temurin-21-jdk \
+ && rm -rf /var/lib/apt/lists/*
+ENV JAVA_HOME=/usr/lib/jvm/temurin-21-jdk-amd64
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
+
+# Node.js 22 LTS  [改动：20 已停止维护 -> 22；修正 –y 为 -y；去掉 Codex CLI]
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+ && apt-get update && apt-get install -y nodejs \
+ && npm config set cafile /etc/ssl/certs/ca-certificates.crt \
+ && rm -rf /var/lib/apt/lists/*
+
+# Tomcat 11
+ARG TOMCAT_VERSION=11.0.0
+RUN mkdir -p /opt \
+ && curl -fsSL "https://archive.apache.org/dist/tomcat/tomcat-11/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz" \
+  | tar -xz -C /opt \
+ && ln -s /opt/apache-tomcat-${TOMCAT_VERSION} /opt/tomcat \
+ && rm -rf /opt/tomcat/webapps/* \
+ && chown -R ubuntu:ubuntu /opt/apache-tomcat-${TOMCAT_VERSION}
+
+ENV CATALINA_HOME=/opt/tomcat
+ENV CATALINA_BASE=/workspaces/project/.tomcat-base
+ENV PATH="${CATALINA_HOME}/bin:${PATH}"
+
+ARG USERNAME=ubuntu
+ARG USER_UID=1000
+ARG USER_GID=1000
+RUN set -eux; \
+    if getent passwd ${USER_UID} >/dev/null; then \
+      existing_user="$(getent passwd ${USER_UID} | cut -d: -f1)"; \
+      if [ "${existing_user}" != "${USERNAME}" ]; then usermod -l ${USERNAME} "${existing_user}" || true; fi; \
+    else \
+      groupadd --gid ${USER_GID} ${USERNAME}; \
+      useradd  --uid ${USER_UID} --gid ${USER_GID} -m -s /bin/bash ${USERNAME}; \
+    fi; \
+    mkdir -p /workspaces/project; \
+    chown -R ${USER_UID}:${USER_GID} /workspaces
+
+USER ${USERNAME}
+
+WORKDIR /workspaces/project
+CMD ["sleep", "infinity"]
+EXPOSE 8080

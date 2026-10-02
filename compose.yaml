@@ -1,0 +1,34 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: dockerfile.dev
+    volumes:
+      - .:/workspaces/project
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy   # [改动] 等数据库真正就绪再启动
+    environment:
+      TZ: Asia/Tokyo
+
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      TZ: Asia/Tokyo                 # [新增] 和 dev 保持同一时区
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql   # [新增] 数据持久化（Postgres 18 起挂这个路径）
+    healthcheck:                     # [新增] 检查数据库是否可以连接
+      test: ["CMD-SHELL", "pg_isready -U app -d app"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:                            # [新增]
